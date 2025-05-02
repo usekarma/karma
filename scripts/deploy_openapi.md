@@ -1,6 +1,6 @@
 # deploy_openapi.py
 
-This script publishes an OpenAPI spec to S3 and updates the corresponding runtime pointer in AWS Systems Manager (SSM). It is the standard way to deploy the Karma API definition for use with infrastructure components such as `serverless-rest`.
+This script publishes an OpenAPI spec to S3 and updates the corresponding runtime pointer in AWS Systems Manager (SSM). It is the standard way to deploy the Karma API definition for use with infrastructure components such as `serverless-api`.
 
 ---
 
@@ -78,10 +78,10 @@ Before running this script:
 
 ## Integration
 
-After publishing, the `serverless-rest` component can be deployed using:
+After publishing, the `serverless-api` component can be deployed using:
 
 ```bash
-AWS_PROFILE=prod ./scripts/deploy.sh serverless-rest karma-api
+AWS_PROFILE=prod ./scripts/deploy.sh serverless-api karma-api
 ```
 
 It will:
@@ -96,4 +96,4 @@ It will:
 
 - `openapi/karma-api/openapi.yaml`: the source API definition
 - `scripts/deploy_openapi.py`: this deployment script
-- `serverless-rest`: the consuming infrastructure component (in `aws-iac`)
+- `serverless-api`: the consuming infrastructure component (in `aws-iac`)

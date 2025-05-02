@@ -67,7 +67,7 @@ The script:
 
 ## After Publishing
 
-Once published, other components like `serverless-rest` will resolve the Lambda version using:
+Once published, other components like `serverless-api` will resolve the Lambda version using:
 
 ```json
 {
