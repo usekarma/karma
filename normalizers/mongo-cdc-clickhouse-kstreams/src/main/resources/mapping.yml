@@ -1,0 +1,14 @@
+defaults:
+  hash_pii: true
+
+mappings:
+  - match: { ns.db: ingest, ns.coll: files }
+    event_type_override:
+      when: "$eq(fullDocument.status,'arrived')"
+      value: "file_arrived"
+      else: "file_event"
+    tags: [consumer_id, file_type, status]
+    attrs:
+      - size_bytes
+      - checksum
+      - latency_sec: "$secondsDiff(fullDocument.response_at,fullDocument.sent_at)"
