@@ -1,0 +1,15 @@
+# Example mapping configuration
+defaults:
+  hash_pii: true
+  max_label_cardinality: 100000
+
+mappings:
+  - match: { ns.db: demo, ns.coll: files }
+    event_type_override:
+      when: "$eq(fullDocument.status,'arrived')"
+      value: "file_arrived"
+      else: "file_event"
+    tags: [consumer_id, file_type, status]
+    attrs:
+      - size_bytes
+      - checksum

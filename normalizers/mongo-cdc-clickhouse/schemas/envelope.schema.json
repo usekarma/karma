@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Karma Event Envelope",
+  "type": "object",
+  "properties": {
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "event_type": {
+      "type": "string"
+    },
+    "entity_id": {
+      "type": "string"
+    },
+    "correlation_id": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "object",
+      "additionalProperties": {
+        "type": [
+          "string",
+          "number",
+          "boolean",
+          "null"
+        ]
+      }
+    },
+    "attrs": {
+      "type": "object",
+      "additionalProperties": {
+        "type": [
+          "string",
+          "number",
+          "boolean",
+          "null"
+        ]
+      }
+    },
+    "idempotency_key": {
+      "type": "string"
+    },
+    "source": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "ts",
+    "event_type",
+    "idempotency_key"
+  ]
+}

@@ -1,0 +1,1 @@
+-- SQL for materialized view to track current state

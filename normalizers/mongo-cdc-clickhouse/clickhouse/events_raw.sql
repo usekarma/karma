@@ -1,0 +1,1 @@
+-- SQL to create events_raw table will go here
