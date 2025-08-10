@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Karma Action Events",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "event_type": {
+          "const": "action.requested"
+        },
+        "ts": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "entity_id": {
+          "type": "string"
+        },
+        "idempotency_key": {
+          "type": "string"
+        },
+        "attrs": {
+          "type": "object",
+          "properties": {
+            "command": {
+              "type": "string"
+            },
+            "args": {
+              "type": "object"
+            },
+            "ttl_sec": {
+              "type": "number"
+            }
+          }
+        }
+      },
+      "required": [
+        "event_type",
+        "ts",
+        "entity_id",
+        "idempotency_key",
+        "attrs"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "event_type": {
+          "enum": [
+            "action.started",
+            "action.succeeded",
+            "action.failed",
+            "action.cancelled"
+          ]
+        }
+      }
+    }
+  ]
+}
