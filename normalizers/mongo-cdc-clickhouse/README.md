@@ -11,4 +11,4 @@ querying current state, baselines, and edges.
 - First-class ClickHouse sink (events_raw + MVs).
 
 ## Status
-Scaffolding only — implementation to follow.
+A minimal Python implementation exists in `src/normalizer.py`, alongside mappings and SQL definitions. This repository does not establish a verified end-to-end deployment. Review dependencies, source/sink wiring, and observed outputs before relying on it. See [Karma implementation and proof status](../../docs/adage-proving-ground.md).
