@@ -1,2 +1,10 @@
 *.zip
 dist/
+coordination/.venv/
+coordination/artifacts/
+coordination/.coverage
+coordination/.pytest_cache/
+coordination/.mypy_cache/
+coordination/.ruff_cache/
+**/__pycache__/
+*.egg-info/

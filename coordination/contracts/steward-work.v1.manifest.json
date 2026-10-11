@@ -1,0 +1,8 @@
+{
+  "version": "karma.steward-work.v1",
+  "authority_repository": "usekarma/karma",
+  "authority_path": "coordination/src/steward_coordination/contract.py",
+  "implementation_sha256": "16718a114edb22836bf4d2001af48069867333fd6da7aa68bce19d523c9f1cb3",
+  "schema_sha256": "c2ea629fb0e479a6965a56992aa2e63a709bef77d1a39ef41eac84e7d8994e0b",
+  "runtime_fetch": false
+}

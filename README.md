@@ -88,3 +88,13 @@ There is no root Poetry project or complete application test suite in this check
 - [Adage proving ground, evidence, and next steps](docs/adage-proving-ground.md)
 - [Website theory and design proposals](https://usekarma.dev/theory/)
 - [Adage quickstarts and deployment documentation](https://github.com/usekarma/adage#getting-started)
+
+## Offline personal stewards (review prototype)
+
+[coordination/](coordination/) proposes a strict minimal work-item contract for
+[Prudence #4](https://github.com/usekarma/karma/issues/4) and
+[Aegis #5](https://github.com/usekarma/karma/issues/5). Only opaque workflow metadata
+and synthetic check receipts are accepted. Financial/medical records and family
+identities stay outside Karma. The existing active task and STOP_FOR_HUMAN are
+preserved; no dispatch, runtime integration or infrastructure is enabled.
+Run the isolated component quality gates and frozen demonstration before reviewing.

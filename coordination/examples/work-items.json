@@ -1,0 +1,62 @@
+[
+  {
+    "version": "karma.steward-work.v1",
+    "work_id": "wk-11111111111111111111111111111111",
+    "steward": "prudence",
+    "owner_id": "actor-44444444444444444444444444444444",
+    "source_issue": "https://github.com/usekarma/karma/issues/4",
+    "state": "STOP_FOR_HUMAN",
+    "active": false,
+    "dependencies": [],
+    "artifact_sha256": "6666666666666666666666666666666666666666666666666666666666666666",
+    "evidence": [
+      {
+        "reference": "ev-55555555555555555555555555555555",
+        "sha256": "5d6e35c1907e34e810c6af9453dc8e956dc0c3c498025d329ef1759daeb635d3",
+        "verification": "VERIFIED",
+        "verifier_id": "actor-44444444444444444444444444444444"
+      }
+    ],
+    "approval": null,
+    "unknown_conditions": [],
+    "failure_conditions": [],
+    "sharing": {
+      "synthetic": true,
+      "authorized": true,
+      "revoked": false,
+      "expires_on": "2026-11-01"
+    },
+    "gate": "STOP_FOR_HUMAN"
+  },
+  {
+    "version": "karma.steward-work.v1",
+    "work_id": "wk-22222222222222222222222222222222",
+    "steward": "aegis",
+    "owner_id": "actor-44444444444444444444444444444444",
+    "source_issue": "https://github.com/usekarma/karma/issues/5",
+    "state": "STOP_FOR_HUMAN",
+    "active": false,
+    "dependencies": [
+      "wk-11111111111111111111111111111111"
+    ],
+    "artifact_sha256": "6666666666666666666666666666666666666666666666666666666666666666",
+    "evidence": [
+      {
+        "reference": "ev-55555555555555555555555555555555",
+        "sha256": "5d6e35c1907e34e810c6af9453dc8e956dc0c3c498025d329ef1759daeb635d3",
+        "verification": "VERIFIED",
+        "verifier_id": "actor-44444444444444444444444444444444"
+      }
+    ],
+    "approval": null,
+    "unknown_conditions": [],
+    "failure_conditions": [],
+    "sharing": {
+      "synthetic": true,
+      "authorized": true,
+      "revoked": false,
+      "expires_on": "2026-11-01"
+    },
+    "gate": "STOP_FOR_HUMAN"
+  }
+]
