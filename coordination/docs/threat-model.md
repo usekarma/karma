@@ -18,3 +18,11 @@ Opaque IDs/digests can correlate activity or covertly encode data. Synthetic met
 is not an authenticated audit trail. Real identity, consent, retention, encryption,
 provenance and security/clinical/financial professional reviews remain unimplemented.
 No safeguards here authorize real-data integration. Human review required.
+
+## Governance proof boundary
+
+See governance-proof.md and specs/governance-proof.md. Fresh verifier/source policy,
+explicit simulated decisions and hash-linked receipts supplement unchanged work-v1.
+Aegis's trusted current in-memory consent state is tested against withdrawal and stale
+copy reuse; private content is excluded before sharing. No network executor, actual
+human approval, activation or production integration is implemented.

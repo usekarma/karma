@@ -11,3 +11,10 @@ Run make check and make test; retain hash locks, Ruff, strict mypy, 90% branch c
 Bandit, secret scan, live audit and fail-closed production readiness. Never weaken gates.
 Record actual evidence and unknowns. Merges and protection changes require explicit
 human approval. Finish with STOP_FOR_HUMAN.
+
+## Authorized governance proof
+
+The current human task authorizes offline end-to-end proofs, explicit fictional
+decision receipts and simulated in-memory consent withdrawal. It does not authorize
+real approvals, merges, provider/account access, cloud changes or automatic dispatch.
+Preserve work-v1 bytes and parent branches; report exact heads and evidence.

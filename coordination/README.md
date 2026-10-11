@@ -28,3 +28,25 @@ Run `.venv/bin/python scripts/demo.py`. Two fictional pending work items retain 
 external active-work slot, checked synthetic test evidence and missing human review.
 The dependent item stays blocked. examples/snapshot.expected.json pins the output;
 no transition, transmission or dispatch occurs.
+
+## First governance proof
+
+[Proof and security evidence](docs/governance-proof.md) ·
+[Exact parent merge plan](docs/merge-readiness.md) ·
+[Proof contracts](specs/governance-proof.md).
+Explicit simulation retains STOP_FOR_HUMAN and never grants execution or merge authority.
+
+Local cross-repository execution requires reviewed local producer checkouts installed
+in this virtual environment, with no network fetching:
+
+```bash
+.venv/bin/python -m pip install --no-deps --no-build-isolation -e "$PRUDENCE_CHECKOUT" -e "$AEGIS_CHECKOUT"
+.venv/bin/python scripts/end_to_end.py
+.venv/bin/python scripts/end_to_end.py --simulate-decision
+```
+
+Set those two variables to the approved local checkout paths. The first command
+installs local code only. The default proof stops before recording a decision; the
+explicit flag records fictional DEFER only. `--write-fixtures` writes safe synthetic
+metadata artifacts, never private briefs/profiles. CI uses those frozen packets and
+does not fetch the private repositories. No external orchestration framework.
