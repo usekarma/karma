@@ -51,6 +51,12 @@ Agents can inspect source/history and AWS read-only, develop components, prepare
 
 Agent safeguards are implemented in [aws-iac PR #1](https://github.com/usekarma/aws-iac/pull/1) and [aws-config PR #1](https://github.com/usekarma/aws-config/pull/1), currently under review. They are not Karma runtime capabilities and are not yet the infrastructure repositories' default-branch behavior.
 
+## Queued strategic work
+
+Faraday-visible queued directions are recorded under [`docs/queue/`](docs/queue/). Queue entries are planning signals, not execution authority.
+
+- [`KARMA-AWS-ESTATE-001` — AWS estate monitoring](docs/queue/aws-estate-monitoring.md): read-only-first reconciliation of desired state, deployed state, operational state, security posture, and cost across authorized AWS accounts and deployments. It is queued, not active, and remains subject to the current `STOP_FOR_HUMAN` and single-active-task boundaries.
+
 ## First infrastructure proof
 
 Compare **desired state vs. actual AWS state vs. actual cost**, explain discrepancies, and prepare safe remediation without destructive changes.
