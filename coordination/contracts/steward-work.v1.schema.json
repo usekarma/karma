@@ -1,0 +1,270 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:karma:steward-work:v1",
+  "title": "Synthetic minimal steward work metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "work_id",
+    "steward",
+    "owner_id",
+    "source_issue",
+    "state",
+    "active",
+    "dependencies",
+    "artifact_sha256",
+    "evidence",
+    "approval",
+    "unknown_conditions",
+    "failure_conditions",
+    "sharing",
+    "gate"
+  ],
+  "properties": {
+    "version": {
+      "const": "karma.steward-work.v1"
+    },
+    "work_id": {
+      "type": "string",
+      "pattern": "wk-[0-9a-f]{32}$",
+      "minLength": 35,
+      "maxLength": 35
+    },
+    "steward": {
+      "type": "string",
+      "enum": [
+        "aegis",
+        "prudence"
+      ]
+    },
+    "owner_id": {
+      "type": "string",
+      "pattern": "actor-[0-9a-f]{32}$",
+      "minLength": 38,
+      "maxLength": 38
+    },
+    "source_issue": {
+      "type": "string",
+      "enum": [
+        "https://github.com/usekarma/karma/issues/4",
+        "https://github.com/usekarma/karma/issues/5"
+      ]
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "BLOCKED",
+        "CLOSED",
+        "FAILED",
+        "INTAKE",
+        "PREPARED",
+        "READY_FOR_PREPARATION",
+        "STOP_FOR_HUMAN",
+        "TRIAGED",
+        "UNKNOWN"
+      ]
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "dependencies": {
+      "type": "array",
+      "maxItems": 16,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "wk-[0-9a-f]{32}$",
+        "minLength": 35,
+        "maxLength": 35
+      }
+    },
+    "artifact_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "minLength": 64,
+      "maxLength": 64
+    },
+    "evidence": {
+      "type": "array",
+      "maxItems": 16,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "reference",
+          "sha256",
+          "verification",
+          "verifier_id"
+        ],
+        "properties": {
+          "reference": {
+            "type": "string",
+            "pattern": "ev-[0-9a-f]{32}$",
+            "minLength": 35,
+            "maxLength": 35
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$",
+            "minLength": 64,
+            "maxLength": 64
+          },
+          "verification": {
+            "type": "string",
+            "enum": [
+              "FAILED",
+              "UNKNOWN",
+              "VERIFIED"
+            ]
+          },
+          "verifier_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "actor-[0-9a-f]{32}$",
+                "minLength": 38,
+                "maxLength": 38
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "approval": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "reviewer_id",
+            "work_id",
+            "artifact_sha256",
+            "scope",
+            "disposition",
+            "issued_on",
+            "expires_on",
+            "revoked"
+          ],
+          "properties": {
+            "reviewer_id": {
+              "type": "string",
+              "pattern": "actor-[0-9a-f]{32}$",
+              "minLength": 38,
+              "maxLength": 38
+            },
+            "work_id": {
+              "type": "string",
+              "pattern": "wk-[0-9a-f]{32}$",
+              "minLength": 35,
+              "maxLength": 35
+            },
+            "artifact_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$",
+              "minLength": 64,
+              "maxLength": 64
+            },
+            "scope": {
+              "type": "string",
+              "enum": [
+                "metadata_review",
+                "offline_preparation"
+              ]
+            },
+            "disposition": {
+              "type": "string",
+              "enum": [
+                "APPROVED",
+                "DENIED"
+              ]
+            },
+            "issued_on": {
+              "type": "string",
+              "format": "date",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+              "minLength": 10,
+              "maxLength": 10
+            },
+            "expires_on": {
+              "type": "string",
+              "format": "date",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+              "minLength": 10,
+              "maxLength": 10
+            },
+            "revoked": {
+              "type": "boolean"
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "unknown_conditions": {
+      "type": "array",
+      "maxItems": 16,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "approval_unknown",
+          "dependency_unknown",
+          "evidence_unknown",
+          "source_unknown"
+        ]
+      }
+    },
+    "failure_conditions": {
+      "type": "array",
+      "maxItems": 16,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "input_rejected",
+          "privacy_denied",
+          "tests_failed"
+        ]
+      }
+    },
+    "sharing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "synthetic",
+        "authorized",
+        "revoked",
+        "expires_on"
+      ],
+      "properties": {
+        "synthetic": {
+          "const": true
+        },
+        "authorized": {
+          "type": "boolean"
+        },
+        "revoked": {
+          "type": "boolean"
+        },
+        "expires_on": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      }
+    },
+    "gate": {
+      "const": "STOP_FOR_HUMAN"
+    }
+  },
+  "description": "Syntax only. Runtime separately enforces per-person permission, calendar validity/expiry, source issue binding, evidence receipt integrity, approval binding, dependency resolution and the global single-active-task boundary."
+}

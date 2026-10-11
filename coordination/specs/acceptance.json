@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "criteria": [
+    {
+      "id": "AC-001",
+      "spec": "specs/work-request.md",
+      "tests": [
+        "tests/test_contract.py::test_invalid_root_contract",
+        "tests/test_contract.py::test_sensitive_payload_rejected_without_disclosure",
+        "tests/test_contract.py::test_malformed_and_duplicate_json_and_bounds",
+        "tests/test_contract.py::test_invalid_evidence_fields",
+        "tests/test_contract.py::test_duplicate_evidence_and_missing_fields",
+        "tests/test_contract.py::test_invalid_dates",
+        "tests/test_contract.py::test_invalid_approval_syntax",
+        "tests/test_contract.py::test_empty_snapshot_and_encoding_fail_closed"
+      ]
+    },
+    {
+      "id": "AC-002",
+      "spec": "specs/work-request.md",
+      "tests": [
+        "tests/test_contract.py::test_sharing_missing_expired_revoked_or_real"
+      ]
+    },
+    {
+      "id": "AC-003",
+      "spec": "specs/work-request.md",
+      "tests": [
+        "tests/test_contract.py::test_unknown_failure_and_unresolved_receipts",
+        "tests/test_contract.py::test_bad_receipts_never_verify",
+        "tests/test_contract.py::test_receipt_failures_retained"
+      ]
+    },
+    {
+      "id": "AC-004",
+      "spec": "specs/work-request.md",
+      "tests": [
+        "tests/test_contract.py::test_approval_binding_expiry_and_no_execution"
+      ]
+    },
+    {
+      "id": "AC-005",
+      "spec": "specs/work-request.md",
+      "tests": [
+        "tests/test_contract.py::test_single_active_slot_and_no_dispatch",
+        "tests/test_contract.py::test_dependencies_cycles_and_closed_claims"
+      ]
+    },
+    {
+      "id": "AC-006",
+      "spec": "specs/work-request.md",
+      "tests": [
+        "tests/test_contract.py::test_valid_and_deterministic_audit",
+        "tests/test_example.py::test_frozen_coordination_example"
+      ]
+    },
+    {
+      "id": "AC-007",
+      "spec": "specs/work-request.md",
+      "tests": [
+        "tests/test_contract_manifest.py::test_vendor_manifest_matches_exact_schema_and_implementation"
+      ]
+    }
+  ]
+}

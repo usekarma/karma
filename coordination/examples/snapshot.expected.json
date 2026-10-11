@@ -1,0 +1,112 @@
+{
+  "version": "karma.steward-work.v1",
+  "items": [
+    {
+      "metadata": {
+        "active": false,
+        "approval": null,
+        "artifact_sha256": "6666666666666666666666666666666666666666666666666666666666666666",
+        "dependencies": [],
+        "evidence": [
+          {
+            "reference": "ev-55555555555555555555555555555555",
+            "sha256": "5d6e35c1907e34e810c6af9453dc8e956dc0c3c498025d329ef1759daeb635d3",
+            "verification": "VERIFIED",
+            "verifier_id": "actor-44444444444444444444444444444444"
+          }
+        ],
+        "failure_conditions": [],
+        "gate": "STOP_FOR_HUMAN",
+        "owner_id": "actor-44444444444444444444444444444444",
+        "sharing": {
+          "authorized": true,
+          "expires_on": "2026-11-01",
+          "revoked": false,
+          "synthetic": true
+        },
+        "source_issue": "https://github.com/usekarma/karma/issues/4",
+        "state": "STOP_FOR_HUMAN",
+        "steward": "prudence",
+        "unknown_conditions": [],
+        "version": "karma.steward-work.v1",
+        "work_id": "wk-11111111111111111111111111111111"
+      },
+      "evidence_checks": [
+        {
+          "reference": "ev-55555555555555555555555555555555",
+          "verification": "VERIFIED"
+        }
+      ],
+      "approval_valid": false,
+      "verification": "UNKNOWN",
+      "conditions": [
+        "approval_unknown"
+      ],
+      "coordination_state": "BLOCKED",
+      "gate": "STOP_FOR_HUMAN"
+    },
+    {
+      "metadata": {
+        "active": false,
+        "approval": null,
+        "artifact_sha256": "6666666666666666666666666666666666666666666666666666666666666666",
+        "dependencies": [
+          "wk-11111111111111111111111111111111"
+        ],
+        "evidence": [
+          {
+            "reference": "ev-55555555555555555555555555555555",
+            "sha256": "5d6e35c1907e34e810c6af9453dc8e956dc0c3c498025d329ef1759daeb635d3",
+            "verification": "VERIFIED",
+            "verifier_id": "actor-44444444444444444444444444444444"
+          }
+        ],
+        "failure_conditions": [],
+        "gate": "STOP_FOR_HUMAN",
+        "owner_id": "actor-44444444444444444444444444444444",
+        "sharing": {
+          "authorized": true,
+          "expires_on": "2026-11-01",
+          "revoked": false,
+          "synthetic": true
+        },
+        "source_issue": "https://github.com/usekarma/karma/issues/5",
+        "state": "STOP_FOR_HUMAN",
+        "steward": "aegis",
+        "unknown_conditions": [],
+        "version": "karma.steward-work.v1",
+        "work_id": "wk-22222222222222222222222222222222"
+      },
+      "evidence_checks": [
+        {
+          "reference": "ev-55555555555555555555555555555555",
+          "verification": "VERIFIED"
+        }
+      ],
+      "approval_valid": false,
+      "verification": "UNKNOWN",
+      "conditions": [
+        "approval_unknown",
+        "dependency_unknown"
+      ],
+      "coordination_state": "BLOCKED",
+      "gate": "STOP_FOR_HUMAN"
+    }
+  ],
+  "current_active_work_id": "wk-33333333333333333333333333333333",
+  "audit": [
+    {
+      "work_id": "wk-11111111111111111111111111111111",
+      "metadata_sha256": "41b2b5f7be6ae96014d99040486263463aa0075ac4fcf64ff13235a9dbb03208",
+      "decision": "BLOCKED",
+      "gate": "STOP_FOR_HUMAN"
+    },
+    {
+      "work_id": "wk-22222222222222222222222222222222",
+      "metadata_sha256": "6cc53228171301ddab8d3fe55f0201a3a79d497dbb69a3cf6f2e650f41890a5a",
+      "decision": "BLOCKED",
+      "gate": "STOP_FOR_HUMAN"
+    }
+  ],
+  "gate": "STOP_FOR_HUMAN"
+}
