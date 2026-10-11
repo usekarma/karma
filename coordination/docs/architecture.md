@@ -25,3 +25,11 @@ The active slot in the frozen demo is a synthetic opaque alias, not a fetched li
 Faraday registry value. No real active direction is changed or declared complete.
 The prototype checks consistency of supplied snapshots; authenticity of the live
 registry and bindings remains a future reviewed integration prerequisite.
+
+## Governance proof boundary
+
+See governance-proof.md and specs/governance-proof.md. Fresh verifier/source policy,
+explicit simulated decisions and hash-linked receipts supplement unchanged work-v1.
+Aegis's trusted current in-memory consent state is tested against withdrawal and stale
+copy reuse; private content is excluded before sharing. No network executor, actual
+human approval, activation or production integration is implemented.

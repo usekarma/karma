@@ -60,6 +60,48 @@
       "tests": [
         "tests/test_contract_manifest.py::test_vendor_manifest_matches_exact_schema_and_implementation"
       ]
+    },
+    {
+      "id": "AC-201",
+      "spec": "specs/governance-proof.md",
+      "tests": [
+        "tests/test_governance.py::test_missing_invalid_stale_unauthorized_evidence",
+        "tests/test_governance.py::test_provenance_bindings_and_fields",
+        "tests/test_governance.py::test_invalid_or_missing_trust_policy"
+      ]
+    },
+    {
+      "id": "AC-202",
+      "spec": "specs/governance-proof.md",
+      "tests": [
+        "tests/test_governance.py::test_dependency_active_and_approval_claims",
+        "tests/test_governance.py::test_verified_dependency_and_wrong_reviewer"
+      ]
+    },
+    {
+      "id": "AC-203",
+      "spec": "specs/governance-proof.md",
+      "tests": [
+        "tests/test_governance.py::test_end_to_end_simulated_review_and_receipt_boundary",
+        "tests/test_governance.py::test_changed_review_and_unauthorized_decision_rejected"
+      ]
+    },
+    {
+      "id": "AC-204",
+      "spec": "specs/governance-proof.md",
+      "tests": [
+        "tests/test_governance.py::test_audit_corruption_and_no_execution",
+        "tests/test_governance.py::test_history_type_hash_order_and_limits",
+        "tests/test_governance.py::test_append_limits_replayed_and_backdated_history"
+      ]
+    },
+    {
+      "id": "AC-205",
+      "spec": "specs/governance-proof.md",
+      "tests": [
+        "tests/test_governance_packets.py::test_actual_producer_packets_and_simulated_receipts",
+        "tests/test_governance_packets.py::test_exported_packet_negative_evidence"
+      ]
     }
   ]
 }

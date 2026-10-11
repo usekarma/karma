@@ -14,3 +14,11 @@ Human must explicitly approve exact PR revisions before merge. Protection propos
 are files for review, not applied settings. Future integrations need scoped authority,
 security design, retention/deletion, authenticated audit and operational recovery.
 STOP_FOR_HUMAN.
+
+## Governance proof boundary
+
+See governance-proof.md and specs/governance-proof.md. Fresh verifier/source policy,
+explicit simulated decisions and hash-linked receipts supplement unchanged work-v1.
+Aegis's trusted current in-memory consent state is tested against withdrawal and stale
+copy reuse; private content is excluded before sharing. No network executor, actual
+human approval, activation or production integration is implemented.

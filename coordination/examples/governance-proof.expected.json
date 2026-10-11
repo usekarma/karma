@@ -1,0 +1,114 @@
+{
+  "synthetic": true,
+  "financial_brief_generated_locally": true,
+  "as_of": "2026-10-11",
+  "contract_hash": "16718a114edb22836bf4d2001af48069867333fd6da7aa68bce19d523c9f1cb3",
+  "profile_denials": 4,
+  "private_data_noninterference": "PASS",
+  "cached_consent_cannot_bypass_withdrawal": true,
+  "revoked_packet_replay": "REJECTED",
+  "work": [
+    {
+      "work_id": "wk-11111111111111111111111111111111",
+      "review": {
+        "body": {
+          "version": "karma.simulated-governance.v1",
+          "synthetic": true,
+          "work_id": "wk-11111111111111111111111111111111",
+          "artifact_sha256": "d31da09708e5bb1afce31a0b816e59575503ee5e7839de6a0a499221c9f1fb5e",
+          "snapshot_sha256": "ea3e1a87d3b10b12baf4f427f022a8b0a495097c27a4af29e5cd97d2b5ae08bf",
+          "provenance_sha256": "10b28324ce8b114f0a5a4b42d7fbced8ea7f073c60f599c7def761132b75f299",
+          "policy_sha256": "1c5db352692af93ab261bfa3d95b84ce3c6092dee4394826cf189ac779315c6e",
+          "as_of": "2026-10-11",
+          "current_active_work_id": "wk-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+          "conditions": [],
+          "readiness": "AWAITING_SIMULATED_HUMAN",
+          "gate": "STOP_FOR_HUMAN",
+          "execution_authorized": false
+        },
+        "sha256": "b8623dc243e815d583ede2268e5102380e9589af9aca317efaf19f770e575e2d"
+      },
+      "simulated_decision_receipts": [
+        {
+          "body": {
+            "artifact_sha256": "d31da09708e5bb1afce31a0b816e59575503ee5e7839de6a0a499221c9f1fb5e",
+            "as_of": "2026-10-11",
+            "current_active_work_id": "wk-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+            "disposition": "DEFER",
+            "event": "simulated_decision",
+            "execution_authorized": false,
+            "gate": "STOP_FOR_HUMAN",
+            "previous_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "review_sha256": "b8623dc243e815d583ede2268e5102380e9589af9aca317efaf19f770e575e2d",
+            "reviewer_id": "actor-ffffffffffffffffffffffffffffffff",
+            "sequence": 1,
+            "simulated": true,
+            "version": "karma.simulated-governance.v1",
+            "work_id": "wk-11111111111111111111111111111111"
+          },
+          "sha256": "b0c8bfd5a4a041ed3c696fa3ef37f7abf81467a8ffa9d8e9eb206c8ecd114938"
+        }
+      ],
+      "negative_evidence": {
+        "missing": "REJECTED",
+        "invalid": "REJECTED",
+        "stale": "REJECTED",
+        "unauthorized": "REJECTED",
+        "missing_dependency": "REJECTED",
+        "active_conflict": "REJECTED"
+      }
+    },
+    {
+      "work_id": "wk-33333333333333333333333333333333",
+      "review": {
+        "body": {
+          "version": "karma.simulated-governance.v1",
+          "synthetic": true,
+          "work_id": "wk-33333333333333333333333333333333",
+          "artifact_sha256": "e12c94d9bd75028151f9bc9d4bed623460b91c4c67d3493c941cd346c6ac942d",
+          "snapshot_sha256": "2926be1f4145c8dd772d6cf60a8a60390861b23c93a93f2273dcf5b0b2ae802d",
+          "provenance_sha256": "4e81911ad805e5d99b7665d41e092a41fa491284f6294c5f31cfdc3722c4c28b",
+          "policy_sha256": "1c5db352692af93ab261bfa3d95b84ce3c6092dee4394826cf189ac779315c6e",
+          "as_of": "2026-10-11",
+          "current_active_work_id": "wk-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+          "conditions": [],
+          "readiness": "AWAITING_SIMULATED_HUMAN",
+          "gate": "STOP_FOR_HUMAN",
+          "execution_authorized": false
+        },
+        "sha256": "4f76117de27c79a2daabfe8c10e9ee736538a657d224c1130e713384fd7e0d2d"
+      },
+      "simulated_decision_receipts": [
+        {
+          "body": {
+            "artifact_sha256": "e12c94d9bd75028151f9bc9d4bed623460b91c4c67d3493c941cd346c6ac942d",
+            "as_of": "2026-10-11",
+            "current_active_work_id": "wk-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+            "disposition": "DEFER",
+            "event": "simulated_decision",
+            "execution_authorized": false,
+            "gate": "STOP_FOR_HUMAN",
+            "previous_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "review_sha256": "4f76117de27c79a2daabfe8c10e9ee736538a657d224c1130e713384fd7e0d2d",
+            "reviewer_id": "actor-ffffffffffffffffffffffffffffffff",
+            "sequence": 1,
+            "simulated": true,
+            "version": "karma.simulated-governance.v1",
+            "work_id": "wk-33333333333333333333333333333333"
+          },
+          "sha256": "a18dee138e8efdcfa6428ac379eeacc51934cd9124181723c366c45fd799d726"
+        }
+      ],
+      "negative_evidence": {
+        "missing": "REJECTED",
+        "invalid": "REJECTED",
+        "stale": "REJECTED",
+        "unauthorized": "REJECTED",
+        "missing_dependency": "REJECTED",
+        "active_conflict": "REJECTED"
+      }
+    }
+  ],
+  "gate": "STOP_FOR_HUMAN",
+  "execution_authorized": false
+}

@@ -1,0 +1,118 @@
+{
+  "packets": [
+    {
+      "work": {
+        "active": false,
+        "approval": null,
+        "artifact_sha256": "d31da09708e5bb1afce31a0b816e59575503ee5e7839de6a0a499221c9f1fb5e",
+        "dependencies": [],
+        "evidence": [
+          {
+            "reference": "ev-11111111111111111111111111111111",
+            "sha256": "bfe77cefbe94366d0848fd5849e534965e303a7b46f39bdc34a641d829f23cef",
+            "verification": "VERIFIED",
+            "verifier_id": "actor-22222222222222222222222222222222"
+          }
+        ],
+        "failure_conditions": [],
+        "gate": "STOP_FOR_HUMAN",
+        "owner_id": "actor-11111111111111111111111111111111",
+        "sharing": {
+          "authorized": true,
+          "expires_on": "2026-10-18",
+          "revoked": false,
+          "synthetic": true
+        },
+        "source_issue": "https://github.com/usekarma/karma/issues/4",
+        "state": "STOP_FOR_HUMAN",
+        "steward": "prudence",
+        "unknown_conditions": [],
+        "version": "karma.steward-work.v1",
+        "work_id": "wk-11111111111111111111111111111111"
+      },
+      "receipt": {
+        "check": "deterministic_tests",
+        "reference": "ev-11111111111111111111111111111111",
+        "result": "PASS",
+        "synthetic": true
+      },
+      "provenance": {
+        "artifact_sha256": "d31da09708e5bb1afce31a0b816e59575503ee5e7839de6a0a499221c9f1fb5e",
+        "checked_on": "2026-10-11",
+        "expires_on": "2026-10-18",
+        "producer_id": "actor-11111111111111111111111111111111",
+        "producer_revision": "5d84e4d11194968ba9562dfbacc2716f22dd4555bd7406dd92f29c1c49599cd3",
+        "receipt_sha256": "bfe77cefbe94366d0848fd5849e534965e303a7b46f39bdc34a641d829f23cef",
+        "reference": "ev-11111111111111111111111111111111",
+        "revoked": false,
+        "synthetic": true,
+        "verifier_id": "actor-22222222222222222222222222222222",
+        "version": "karma.simulated-governance.v1",
+        "work_id": "wk-11111111111111111111111111111111"
+      }
+    },
+    {
+      "work": {
+        "active": false,
+        "approval": null,
+        "artifact_sha256": "e12c94d9bd75028151f9bc9d4bed623460b91c4c67d3493c941cd346c6ac942d",
+        "dependencies": [],
+        "evidence": [
+          {
+            "reference": "ev-33333333333333333333333333333333",
+            "sha256": "dd9036c1331c298173ef331b14eb48a58a9a2bea7dca7da632c705726f832c6d",
+            "verification": "VERIFIED",
+            "verifier_id": "actor-44444444444444444444444444444444"
+          }
+        ],
+        "failure_conditions": [],
+        "gate": "STOP_FOR_HUMAN",
+        "owner_id": "actor-33333333333333333333333333333333",
+        "sharing": {
+          "authorized": true,
+          "expires_on": "2026-10-18",
+          "revoked": false,
+          "synthetic": true
+        },
+        "source_issue": "https://github.com/usekarma/karma/issues/5",
+        "state": "STOP_FOR_HUMAN",
+        "steward": "aegis",
+        "unknown_conditions": [],
+        "version": "karma.steward-work.v1",
+        "work_id": "wk-33333333333333333333333333333333"
+      },
+      "receipt": {
+        "check": "privacy_isolation",
+        "reference": "ev-33333333333333333333333333333333",
+        "result": "PASS",
+        "synthetic": true
+      },
+      "provenance": {
+        "artifact_sha256": "e12c94d9bd75028151f9bc9d4bed623460b91c4c67d3493c941cd346c6ac942d",
+        "checked_on": "2026-10-11",
+        "expires_on": "2026-10-18",
+        "producer_id": "actor-33333333333333333333333333333333",
+        "producer_revision": "fa4fcddbc42316cd7617c6e4b89220f69ac12a122eaca3243e767aa41f22d82a",
+        "receipt_sha256": "dd9036c1331c298173ef331b14eb48a58a9a2bea7dca7da632c705726f832c6d",
+        "reference": "ev-33333333333333333333333333333333",
+        "revoked": false,
+        "synthetic": true,
+        "verifier_id": "actor-44444444444444444444444444444444",
+        "version": "karma.simulated-governance.v1",
+        "work_id": "wk-33333333333333333333333333333333"
+      }
+    }
+  ],
+  "producers": {
+    "actor-11111111111111111111111111111111": "5d84e4d11194968ba9562dfbacc2716f22dd4555bd7406dd92f29c1c49599cd3",
+    "actor-33333333333333333333333333333333": "fa4fcddbc42316cd7617c6e4b89220f69ac12a122eaca3243e767aa41f22d82a"
+  },
+  "verifiers": [
+    "actor-22222222222222222222222222222222",
+    "actor-44444444444444444444444444444444"
+  ],
+  "reviewers": [
+    "actor-ffffffffffffffffffffffffffffffff"
+  ],
+  "current_active_work_id": "wk-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+}
