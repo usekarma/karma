@@ -76,3 +76,14 @@ The example is a **proposal**, not a live queue state file. Local paths must nev
 
 ## Next engineering slice
 Review this contract first. Then add an **offline, read-only** issue adapter and schema validator with fixture-based tests. Avoid enabling GitHub Actions dispatch, runners, hardware access, AWS credentials, or webhook write paths until separately reviewed and authorized.
+
+## Coexistence with strategic queue documents
+
+Karma also uses `docs/queue/` for Faraday-visible strategic directions (see proposed AWS-estate item in PR #1). These are **planning inputs**, not separate executable job queues. The canonical execution/work lifecycle is the validated work-item state model above once implemented; neither a markdown frontmatter `status: queued` nor a GitHub issue label is executable authority.
+
+- Preserve stable strategic IDs (for example `KARMA-AWS-ESTATE-001`) when an issue is created or linked; maintain a one-to-one linkage instead of duplicating work.
+- `priority: high`, `faraday_visible: true`, and `authority: read-only-first` do **not** grant observation, cloud access, dispatch or execution. `authority` describes proposed scope, not an approval grant.
+- Respect the existing **single-active-task** constraint across both intake channels. A second queue item stays pending until the currently active direction explicitly permits it.
+- PR #1's proposed queue file and this contract are independently reviewable; until merged, they are not default-branch capabilities.
+- The pilot `PUBLIC_KEY_INSPECTION_PENDING` is a domain-specific condition, not one of the lifecycle states. Keep it in a separate `domain_status` field when a validator is implemented; do not silently coerce it into `VERIFIED`, `READY_FOR_PREPARATION`, or `AUTHORIZED`.
+- Reference immutable source revisions, evidence verification status, and the originating issue/queue ID when creating a normalized work item. Any disagreement is a review blocker rather than an automatic precedence rule.
