@@ -14,7 +14,9 @@ checks unchanged work-v1 hashes, generates a financial brief locally, sends only
 synthetic work/check packets, and evaluates provenance, dependencies and active identity.
 Default invocation produces NO decision. Explicit --simulate-decision records only
 fictional DEFER receipts; simulated=true, execution_authorized=false and STOP_FOR_HUMAN
-remain present. Work approval remains null; no closure, action or task activation occurs.
+remain present. A minimal opaque revocation reference marks the prior packet revoked
+in the trusted synthetic inventory; replay is rejected. Only the unaffected profile
+exports a fresh packet after withdrawal. Work approval remains null; no closure, action or task activation occurs.
 
 Observed negative evidence: missing, invalid, stale and unauthorized packets reject.
 Missing dependencies and conflicting active claims also reject. Audit tests reject

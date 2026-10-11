@@ -54,7 +54,9 @@ def run(*, simulate_decision: bool = False) -> tuple[dict[str, Any], dict[str, A
             vault.read(subject, requester, TODAY)
         except PermissionError:
             denied += 1
-    vault.withdraw(alex.member.member_id, alex.member.member_id, actor_id=alex.member.member_id)
+    revoked_ref = vault.withdraw(
+        alex.member.member_id, alex.member.member_id, actor_id=alex.member.member_id
+    )
     try:
         vault.read(alex.member.member_id, alex.member.member_id, TODAY)
     except PermissionError:
@@ -78,10 +80,32 @@ def run(*, simulate_decision: bool = False) -> tuple[dict[str, Any], dict[str, A
         alex.member.member_id, alex.member.member_id, TODAY, health_revision
     ):
         raise ValueError("private content affected shared metadata")
-    packets = [(proposal.work_json, proposal.check_receipt, proposal.provenance_json), packet]
+    permitted_packet = vault.packet(
+        blair.member.member_id, blair.member.member_id, TODAY, health_revision
+    )
+    packets = [
+        (proposal.work_json, proposal.check_receipt, proposal.provenance_json),
+        permitted_packet,
+    ]
     registry = {finance.PRODUCER_ID: finance_revision, health.PRODUCER_ID: health_revision}
     verifiers = frozenset({finance.VERIFIER_ID, health.VERIFIER_ID})
     reviewers = frozenset({REVIEWER_ID})
+    revoked_source = json.loads(packet[2]) | {"revoked": True}
+    if revoked_source["reference"] != revoked_ref:
+        raise ValueError("revocation evidence identity mismatch")
+    replay = review_for_human(
+        (packet[0],),
+        {revoked_ref: packet[1]},
+        {revoked_ref: canonical(revoked_source)},
+        TODAY,
+        json.loads(packet[0])["work_id"],
+        ACTIVE_ID,
+        registry,
+        verifiers,
+        reviewers,
+    )
+    if replay["body"]["readiness"] != "REJECTED":
+        raise ValueError("cached withdrawn metadata was accepted")
     outcomes: list[dict[str, Any]] = []
     for raw, check, source in packets:
         w = json.loads(raw)
@@ -175,6 +199,7 @@ def run(*, simulate_decision: bool = False) -> tuple[dict[str, Any], dict[str, A
         "profile_denials": denied,
         "private_data_noninterference": "PASS",
         "cached_consent_cannot_bypass_withdrawal": True,
+        "revoked_packet_replay": "REJECTED",
         "work": outcomes,
         "gate": "STOP_FOR_HUMAN",
         "execution_authorized": False,

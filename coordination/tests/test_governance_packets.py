@@ -69,6 +69,7 @@ def test_actual_producer_packets_and_simulated_receipts() -> None:
     assert expected["profile_denials"] == 4
     assert expected["private_data_noninterference"] == "PASS"
     assert expected["cached_consent_cannot_bypass_withdrawal"] is True
+    assert expected["revoked_packet_replay"] == "REJECTED"
     raw = canonical(data)
     assert "fictional-alex" not in raw and "fictional-blair" not in raw
 
